@@ -127,7 +127,8 @@ message(STATUS "Found Opencv headers in: ${OPENCV_INCLUDE_DIR}")
 
 add_executable(odometry src/odometry.cpp)
 target_link_libraries(odometry Ceres::ceres pangolin TBB::tbb opengv ${OpenCV_LIBS})
-
+add_executable(feed_image_opencv src/feed_image_opencv.cpp)
+target_link_libraries(feed_image_opencv ${OpenCV_LIBS})
 
 
 enable_testing()
